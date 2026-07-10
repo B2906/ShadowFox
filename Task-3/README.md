@@ -1,510 +1,270 @@
-# \# ⌨ AI Keyboard Assistant: LSTM-Based Next Word Prediction with Autocorrect
+# ⌨ AI Keyboard Assistant: LSTM-Based Next Word Prediction with Autocorrect
+
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.21-orange?logo=tensorflow)
+![Streamlit](https://img.shields.io/badge/Streamlit-Web_App-red?logo=streamlit)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+---
+
+## 📌 Project Overview
+
+The **AI Keyboard Assistant** is a Deep Learning-based Natural Language Processing (NLP) application that predicts the **next word** in a sentence using an **LSTM (Long Short-Term Memory)** neural network.
+
+The application also includes an optional **Autocorrect** feature that corrects spelling mistakes before generating predictions, providing a more intuitive typing experience.
+
+The model is trained on the **Tiny Shakespeare Dataset** and deployed using an interactive **Streamlit** web application.
+
+---
+
+## ✨ Features
+
+- 🔤 LSTM-based Next Word Prediction
+- ✍️ Optional Autocorrect using TextBlob
+- 🎯 Top-3 Word Predictions
+- 📊 Confidence Scores
+- 📈 Training Accuracy & Loss Visualization
+- 🌐 Interactive Streamlit Web Application
+- 💾 Saved Model and Tokenizer
+- ⚡ Real-Time Prediction
+
+---
+
+## 🛠 Technologies Used
+
+| Category | Technology |
+|----------|------------|
+| Programming Language | Python |
+| Deep Learning | TensorFlow / Keras |
+| NLP | TextBlob |
+| Frontend | Streamlit |
+| Data Processing | NumPy |
+| Visualization | Matplotlib |
+| Dataset | Tiny Shakespeare |
+
+---
+
+## 📂 Project Structure
+
+```text
+Task-3
+│
+├── app/
+│   ├── helper.py
+│   └── streamlit_app.py
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── models/
+│   ├── config.json
+│   ├── next_word_model.keras
+│   └── tokenizer.pkl
+│
+├── outputs/
+│   ├── accuracy.png
+│   └── loss.png
+│
+├── reports/
+│
+├── src/
+│   ├── autocorrect.py
+│   ├── config.py
+│   ├── data_preparation.py
+│   ├── dataset_loader.py
+│   ├── evaluate.py
+│   ├── model.py
+│   ├── predict.py
+│   ├── preprocessing.py
+│   ├── tokenizer_utils.py
+│   ├── train.py
+│   └── utils.py
+│
+├── tests/
+│
+├── README.md
+├── requirements.txt
+├── .gitignore
+└── main.py
+```
+
+---
+
+## 🧠 Model Architecture
+
+The application uses the following Deep Learning architecture:
+
+```text
+Input Layer
+      │
+      ▼
+Embedding Layer
+      │
+      ▼
+LSTM Layer
+      │
+      ▼
+Dropout Layer
+      │
+      ▼
+Dense Layer (ReLU)
+      │
+      ▼
+Output Layer (Softmax)
+```
 
-# 
+---
 
-# !\[Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+## 📊 Dataset
 
-# !\[TensorFlow](https://img.shields.io/badge/TensorFlow-2.21-orange?logo=tensorflow)
+- **Dataset:** Tiny Shakespeare
+- Contains thousands of Shakespearean sentences used to train an LSTM language model.
+- Used for learning contextual relationships between words.
 
-# !\[Streamlit](https://img.shields.io/badge/Streamlit-Web\_App-red?logo=streamlit)
+---
 
-# !\[License](https://img.shields.io/badge/License-MIT-green)
+## ⚙️ Installation
 
-# 
+### 1. Clone the repository
 
-# \## 📌 Project Overview
+```bash
+git clone https://github.com/B2906/ShadowFox.git
+```
 
-# 
+### 2. Navigate to Task-3
 
-# The \*\*AI Keyboard Assistant\*\* is a Deep Learning based Natural Language Processing (NLP) application that predicts the \*\*next word\*\* in a sentence using an \*\*LSTM (Long Short-Term Memory)\*\* neural network.
+```bash
+cd ShadowFox/Task-3
+```
 
-# 
+### 3. Create a Virtual Environment
 
-# The application also includes an optional \*\*Autocorrect\*\* feature that corrects spelling mistakes before generating predictions, providing a more intuitive typing experience.
+```bash
+python -m venv venv
+```
 
-# 
+### 4. Activate the Virtual Environment
 
-# The model has been trained using the \*\*Tiny Shakespeare\*\* dataset and is deployed through an interactive \*\*Streamlit\*\* web application.
+**Windows**
 
-# 
+```bash
+venv\Scripts\activate
+```
 
-# \---
+### 5. Install Dependencies
 
-# 
+```bash
+pip install -r requirements.txt
+```
 
-# \## ✨ Features
+### 6. Run the Application
 
-# 
+```bash
+streamlit run app/streamlit_app.py
+```
 
-# \- 🔤 LSTM-based Next Word Prediction
+---
 
-# \- ✍ Optional Autocorrect using TextBlob
+## 🚀 How It Works
 
-# \- 🎯 Top-3 Word Predictions
+```text
+User Input
+      │
+      ▼
+(Optional) Autocorrect
+      │
+      ▼
+Text Preprocessing
+      │
+      ▼
+Tokenization
+      │
+      ▼
+Sequence Padding
+      │
+      ▼
+LSTM Neural Network
+      │
+      ▼
+Top-3 Next Word Prediction
+      │
+      ▼
+Display Results
+```
 
-# \- 📊 Confidence Scores
+---
 
-# \- 📈 Training Accuracy \& Loss Visualization
+## 📈 Results
 
-# \- 🌐 Interactive Streamlit Web Application
+The trained LSTM model successfully predicts the most probable next word based on the contextual information provided by the input sentence.
 
-# \- 💾 Saved Model and Tokenizer
+### Example
 
-# \- ⚡ Real-time Prediction
+**Input**
 
-# 
+```text
+to be
+```
 
-# \---
+**Predicted Word**
 
-# 
+```text
+the
+```
 
-# \## 🛠 Technologies Used
+The application also displays the **Top-3 predictions** along with their confidence scores.
 
-# 
+---
 
-# | Category | Technology |
+## 📷 Screenshots
 
-# |----------|------------|
+Add your screenshots here.
 
-# | Language | Python |
+### 🏠 Home Page
 
-# | Deep Learning | TensorFlow / Keras |
+*(Insert Home Page Screenshot)*
 
-# | NLP | TextBlob |
+### 🔮 Prediction Example
 
-# | Frontend | Streamlit |
+*(Insert Prediction Screenshot)*
 
-# | Data Processing | NumPy |
+### ✍️ Autocorrect Example
 
-# | Visualization | Matplotlib |
+*(Insert Autocorrect Screenshot)*
 
-# | Dataset | Tiny Shakespeare |
+### 📈 Training Accuracy
 
-# 
+*(Insert Accuracy Graph)*
 
-# \---
+### 📉 Training Loss
 
-# 
+*(Insert Loss Graph)*
 
-# \## 📂 Project Structure
+---
 
-# 
+## 🔮 Future Scope
 
-# ```text
+- 🤖 Transformer-based Language Models (BERT, GPT)
+- 🌍 Multi-language Support
+- 🎤 Voice-based Input
+- 📱 Mobile Keyboard Integration
+- 🧠 Personalized Word Suggestions
+- ☁️ Cloud Deployment
 
-# Task-3
+---
 
-# │
+## 👨‍💻 Developer
 
-# ├── app/
+**Bhuvanesh Gupta**
 
-# │   ├── helper.py
+Machine Learning & Deep Learning Enthusiast
 
-# │   └── streamlit\_app.py
+**GitHub:**  
+https://github.com/B2906
 
-# │
+---
 
-# ├── data/
+## 📜 License
 
-# │   ├── raw/
-
-# │   └── processed/
-
-# │
-
-# ├── models/
-
-# │   ├── config.json
-
-# │   ├── next\_word\_model.keras
-
-# │   └── tokenizer.pkl
-
-# │
-
-# ├── outputs/
-
-# │   ├── accuracy.png
-
-# │   └── loss.png
-
-# │
-
-# ├── src/
-
-# │   ├── autocorrect.py
-
-# │   ├── train.py
-
-# │   ├── predict.py
-
-# │   ├── model.py
-
-# │   ├── preprocessing.py
-
-# │   ├── tokenizer\_utils.py
-
-# │   └── ...
-
-# │
-
-# ├── requirements.txt
-
-# ├── main.py
-
-# └── README.md
-
-# ```
-
-# 
-
-# \---
-
-# 
-
-# \## 🧠 Model Architecture
-
-# 
-
-# The application uses the following neural network architecture:
-
-# 
-
-# Input Layer
-
-# 
-
-# ↓
-
-# 
-
-# Embedding Layer
-
-# 
-
-# ↓
-
-# 
-
-# LSTM Layer
-
-# 
-
-# ↓
-
-# 
-
-# Dropout Layer
-
-# 
-
-# ↓
-
-# 
-
-# Dense Layer (ReLU)
-
-# 
-
-# ↓
-
-# 
-
-# Output Layer (Softmax)
-
-# 
-
-# \---
-
-# 
-
-# \## 📊 Dataset
-
-# 
-
-# Dataset Used:
-
-# 
-
-# \*\*Tiny Shakespeare Dataset\*\*
-
-# 
-
-# The dataset contains thousands of Shakespearean sentences used for training an LSTM language model.
-
-# 
-
-# \---
-
-# 
-
-# \## ⚙ Installation
-
-# 
-
-# Clone the repository
-
-# 
-
-# ```bash
-
-# git clone https://github.com/B2906/ShadowFox.git
-
-# ```
-
-# 
-
-# Move to Task-3
-
-# 
-
-# ```bash
-
-# cd ShadowFox/Task-3
-
-# ```
-
-# 
-
-# Create Virtual Environment
-
-# 
-
-# ```bash
-
-# python -m venv venv
-
-# ```
-
-# 
-
-# Activate Environment
-
-# 
-
-# Windows
-
-# 
-
-# ```bash
-
-# venv\\Scripts\\activate
-
-# ```
-
-# 
-
-# Install Dependencies
-
-# 
-
-# ```bash
-
-# pip install -r requirements.txt
-
-# ```
-
-# 
-
-# Run Streamlit
-
-# 
-
-# ```bash
-
-# streamlit run app/streamlit\_app.py
-
-# ```
-
-# 
-
-# \---
-
-# 
-
-# \## 🚀 How It Works
-
-# 
-
-# User Input
-
-# 
-
-# ↓
-
-# 
-
-# (Optional) Autocorrect
-
-# 
-
-# ↓
-
-# 
-
-# Text Preprocessing
-
-# 
-
-# ↓
-
-# 
-
-# Tokenization
-
-# 
-
-# ↓
-
-# 
-
-# Sequence Padding
-
-# 
-
-# ↓
-
-# 
-
-# LSTM Model
-
-# 
-
-# ↓
-
-# 
-
-# Top-3 Predictions
-
-# 
-
-# ↓
-
-# 
-
-# Display Results
-
-# 
-
-# \---
-
-# 
-
-# \## 📈 Results
-
-# 
-
-# The trained model successfully predicts the most probable next words based on user input.
-
-# 
-
-# Example:
-
-# 
-
-# Input:
-
-# 
-
-# ```
-
-# to be
-
-# ```
-
-# 
-
-# Prediction:
-
-# 
-
-# ```
-
-# the
-
-# ```
-
-# 
-
-# The application also displays the Top-3 predictions along with confidence scores.
-
-# 
-
-# \---
-
-# 
-
-# \## 📷 Screenshots
-
-# 
-
-# Add the following screenshots:
-
-# 
-
-# \- Home Page
-
-# \- Prediction Example
-
-# \- Autocorrect Example
-
-# \- Accuracy Graph
-
-# \- Loss Graph
-
-# 
-
-# \---
-
-# 
-
-# \## 🔮 Future Scope
-
-# 
-
-# \- Transformer-based Language Models
-
-# \- Larger Training Dataset
-
-# \- Voice Input Support
-
-# \- Multi-language Prediction
-
-# \- Mobile Keyboard Integration
-
-# \- Personalized User Suggestions
-
-# 
-
-# \---
-
-# 
-
-# \## 👨‍💻 Developer
-
-# 
-
-# \*\*Bhuvanesh Gupta\*\*
-
-# 
-
-# Machine Learning \& Deep Learning Enthusiast
-
-# 
-
-# GitHub:
-
-# https://github.com/B2906
-
-# 
-
-# \---
-
-# 
-
-# \## 📜 License
-
-# 
-
-# This project was developed as part of the \*\*ShadowFox Machine Learning Internship\*\* for educational purposes.
-
+This project was developed as part of the **ShadowFox Machine Learning Internship** for educational purposes.
