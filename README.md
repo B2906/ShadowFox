@@ -1,60 +1,74 @@
-\# ShadowFox Internship Tasks
+# 🚀 ShadowFox Internship Tasks
 
+Welcome to my **ShadowFox Machine Learning Internship** repository.
 
+This repository contains all the projects and tasks completed during my internship. Each task demonstrates practical implementation of Machine Learning and Deep Learning concepts using Python and modern AI frameworks.
 
-This repository contains all the tasks completed during the \*\*ShadowFox Machine Learning Internship\*\*.
+---
 
+## 📂 Repository Structure
 
+```text
+ShadowFox
+│
+├── Task-1
+│
+├── Task-2
+│
+└── Task-3
+    └── AI Keyboard Assistant
+```
 
-\---
+---
 
+## ✅ Completed Tasks
 
+### 📌 Task 3 — AI Keyboard Assistant
 
-\## 📋 Completed Tasks
+**LSTM-Based Next Word Prediction with Autocorrect**
 
+### ✨ Key Features
 
+- 🔤 LSTM-based Next Word Prediction
+- ✍️ Optional Autocorrect
+- 🌐 Interactive Streamlit Web Application
+- 📊 Top-3 Word Predictions
+- 🧠 TensorFlow Deep Learning Model
+- 💾 Saved Model & Tokenizer
+- 📈 Training Accuracy & Loss Visualization
 
-\### ✅ Task 3
+➡️ Complete documentation is available inside the **Task-3** folder.
 
+---
 
+## 🛠 Technologies Used
 
-\*\*AI Keyboard Assistant: LSTM-Based Next Word Prediction with Autocorrect\*\*
+| Technology | Purpose |
+|------------|---------|
+| Python | Programming Language |
+| TensorFlow / Keras | Deep Learning |
+| Streamlit | Web Application |
+| NumPy | Data Processing |
+| Matplotlib | Visualization |
+| TextBlob | Autocorrect |
+| Git & GitHub | Version Control |
 
+---
 
+## 🎯 Internship Objective
 
-Features:
+The goal of this internship is to design and develop practical Machine Learning and Deep Learning applications while following software engineering best practices such as modular project structure, documentation, and version control.
 
+---
 
+## 👨‍💻 Developer
 
-\- LSTM-based Next Word Prediction
+**Bhuvanesh Gupta**
 
-\- Optional Autocorrect
+Machine Learning & Deep Learning Enthusiast
 
-\- Streamlit Web Application
+🔗 GitHub: https://github.com/B2906
 
-\- TensorFlow Deep Learning Model
+---
 
-\- Top-3 Predictions
-
-\- Interactive User Interface
-
-
-
-Open the \*\*Task-3\*\* folder for the complete project documentation.
-
-
-
-\---
-
-
-
-\## 👨‍💻 Developer
-
-
-
-\*\*Bhuvanesh Gupta\*\*
-
-
-
-GitHub: https://github.com/B2906
-
+⭐ Thank you for visiting this repository!
