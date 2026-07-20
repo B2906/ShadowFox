@@ -162,34 +162,39 @@ The web application also visualizes feature importance dynamically.
 
 ## 🏠 Home Page
 
-*(Insert Home Page Screenshot)*
+![Home Page](screenshots/home.png)
 
 ---
 
-## 🚗 Price Prediction
+## 🚗 Prediction Interface
 
-*(Insert Prediction Screenshot)*
+Enter the car details such as present price, kilometers driven, fuel type, seller type, transmission, owner count, and car age.
 
----
-
-## 📊 Feature Importance
-
-*(Insert Feature Importance Screenshot)*
+![Prediction Interface](screenshots/prediction_interface.png)
 
 ---
 
-## 📈 Actual vs Predicted
+## 💰 Prediction Result
 
-*(Insert Graph Screenshot)*
+The trained Gradient Boosting model predicts the estimated resale value of the car instantly.
 
----
-
-## 📉 Residual Plot
-
-*(Insert Residual Plot Screenshot)*
+![Prediction Result](screenshots/prediction_result.png)
 
 ---
 
+## 📊 Model Information & Feature Importance
+
+View the machine learning model details, dataset information, and the importance of each feature used during prediction.
+
+![Model Information](screenshots/model_information.png)
+
+---
+
+## 📈 Model Evaluation
+
+The project includes Actual vs Predicted and Residual Plot visualizations to evaluate model performance.
+
+![Model Evaluation](screenshots/model_evaluation.png)
 # ⚙ Installation
 
 ## 1️⃣ Clone Repository
