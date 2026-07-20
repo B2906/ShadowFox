@@ -47,7 +47,7 @@ The model is trained on the **Tiny Shakespeare Dataset** and deployed using an i
 ## 📂 Project Structure
 
 ```text
-Task-3
+Task-1
 │
 ├── app/
 │   ├── helper.py
