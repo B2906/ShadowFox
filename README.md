@@ -1,19 +1,21 @@
-# 🚀 ShadowFox Internship Tasks
+# 🚀 ShadowFox Machine Learning Internship
 
-Welcome to my **ShadowFox Machine Learning Internship** repository.
+Welcome to my ShadowFox Machine Learning Internship repository.
 
-This repository contains all the projects and tasks completed during my internship. Each task demonstrates practical implementation of Machine Learning and Deep Learning concepts using Python and modern AI frameworks.
+This repository contains all the projects completed during my internship.
 
 ---
 
 ## 📂 Repository Structure
 
-```text
+```
 ShadowFox
 │
 ├── Task-1
-│    └── AI Keyboard Assistant
+│   └── AI Keyboard Assistant
+│
 ├── Task-2
+│   └── Car Price Prediction
 │
 └── README.md
 ```
@@ -22,41 +24,32 @@ ShadowFox
 
 ## ✅ Completed Tasks
 
-### 📌 Task 1 — AI Keyboard Assistant
+### 📌 Task-1 — AI Keyboard Assistant
+- LSTM Based Next Word Prediction
+- Autocorrect
+- Streamlit Web App
+- TensorFlow/Keras
 
-**LSTM-Based Next Word Prediction with Autocorrect**
-
-### ✨ Key Features
-
-- 🔤 LSTM-based Next Word Prediction
-- ✍️ Optional Autocorrect
-- 🌐 Interactive Streamlit Web Application
-- 📊 Top-3 Word Predictions
-- 🧠 TensorFlow Deep Learning Model
-- 💾 Saved Model & Tokenizer
-- 📈 Training Accuracy & Loss Visualization
-
-➡️ Complete documentation is available inside the **Task-1** folder.
+### 📌 Task-2 — Car Price Prediction
+- Gradient Boosting Regressor
+- Flask Web Application
+- Interactive Dashboard
+- Feature Importance
+- Model Evaluation
 
 ---
 
-## 🛠 Technologies Used
+## 🛠 Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| Python | Programming Language |
-| TensorFlow / Keras | Deep Learning |
-| Streamlit | Web Application |
-| NumPy | Data Processing |
-| Matplotlib | Visualization |
-| TextBlob | Autocorrect |
-| Git & GitHub | Version Control |
-
----
-
-## 🎯 Internship Objective
-
-The goal of this internship is to design and develop practical Machine Learning and Deep Learning applications while following software engineering best practices such as modular project structure, documentation, and version control.
+- Python
+- TensorFlow
+- Scikit-learn
+- Flask
+- Streamlit
+- Pandas
+- NumPy
+- Matplotlib
+- Git & GitHub
 
 ---
 
@@ -64,10 +57,4 @@ The goal of this internship is to design and develop practical Machine Learning 
 
 **Bhuvanesh Gupta**
 
-Machine Learning & Deep Learning Enthusiast
-
-🔗 GitHub: https://github.com/B2906
-
----
-
-⭐ Thank you for visiting this repository!
+GitHub: https://github.com/B2906
