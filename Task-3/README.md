@@ -132,10 +132,10 @@ Output Layer (Softmax)
 git clone https://github.com/B2906/ShadowFox.git
 ```
 
-### 2. Navigate to Task-3
+### 2. Navigate to Task-1
 
 ```bash
-cd ShadowFox/Task-3
+cd ShadowFox/Task-1
 ```
 
 ### 3. Create a Virtual Environment
