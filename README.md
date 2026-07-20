@@ -12,18 +12,18 @@ This repository contains all the projects and tasks completed during my internsh
 ShadowFox
 │
 ├── Task-1
-│
+│    └── AI Keyboard Assistant
 ├── Task-2
 │
 └── Task-3
-    └── AI Keyboard Assistant
+    
 ```
 
 ---
 
 ## ✅ Completed Tasks
 
-### 📌 Task 3 — AI Keyboard Assistant
+### 📌 Task 1 — AI Keyboard Assistant
 
 **LSTM-Based Next Word Prediction with Autocorrect**
 
