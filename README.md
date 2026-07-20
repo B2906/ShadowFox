@@ -15,8 +15,7 @@ ShadowFox
 │    └── AI Keyboard Assistant
 ├── Task-2
 │
-└── Task-3
-    
+└── README.md
 ```
 
 ---
@@ -37,7 +36,7 @@ ShadowFox
 - 💾 Saved Model & Tokenizer
 - 📈 Training Accuracy & Loss Visualization
 
-➡️ Complete documentation is available inside the **Task-3** folder.
+➡️ Complete documentation is available inside the **Task-1** folder.
 
 ---
 
