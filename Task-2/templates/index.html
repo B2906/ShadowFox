@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Car Resale Value Estimator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="page">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-image">
+
+            <img src="{{ url_for('static', filename='hero.png') }}"
+                 alt="AI Car Price Predictor">
+
+        </div>
+
+        <h1>🚗 AI-Powered Car Resale Value Estimator</h1>
+
+        <p>
+            Estimate your used car's market value instantly using a
+            <strong>Gradient Boosting Machine Learning Model</strong>
+            trained on the CarDekho dataset.
+        </p>
+
+    </section>
+
+    <!-- MAIN DASHBOARD -->
+
+    <div class="dashboard">
+
+        <!-- LEFT SIDE -->
+
+        <div class="left-panel">
+
+            <div class="card">
+
+                <h2>Car Information</h2>
+
+                <form action="/predict" method="POST">
+
+                    <div class="input-group">
+
+                        <label>💰 Present Price (Lakhs)</label>
+
+                        <input
+                            type="number"
+                            step="0.01"
+                            name="present_price"
+                            placeholder="Example : 8.50"
+                            value="{{ present_price if present_price else '' }}"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>🛣 Kilometers Driven</label>
+
+                        <input
+                            type="number"
+                            name="kms_driven"
+                            placeholder="Example : 45000"
+                            value="{{ kms_driven if kms_driven else '' }}"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>👤 Number of Owners</label>
+
+                        <input
+                            type="number"
+                            min="0"
+                            max="3"
+                            name="owner"
+                            value="{{ owner if owner is not none else '' }}"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>📅 Car Age (Years)</label>
+
+                        <input
+                            type="number"
+                            min="0"
+                            name="car_age"
+                            placeholder="Example : 5"
+                            value="{{ car_age if car_age else '' }}"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>⛽ Fuel Type</label>
+
+                        <select name="fuel">
+
+                            <option value="Petrol"
+                                {% if fuel=="Petrol" %}selected{% endif %}>
+                                Petrol
+                            </option>
+
+                            <option value="Diesel"
+                                {% if fuel=="Diesel" %}selected{% endif %}>
+                                Diesel
+                            </option>
+
+                            <option value="CNG"
+                                {% if fuel=="CNG" %}selected{% endif %}>
+                                CNG
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>🏪 Seller Type</label>
+
+                        <select name="seller">
+
+                            <option value="Dealer"
+                                {% if seller=="Dealer" %}selected{% endif %}>
+                                Dealer
+                            </option>
+
+                            <option value="Individual"
+                                {% if seller=="Individual" %}selected{% endif %}>
+                                Individual
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>⚙ Transmission</label>
+
+                        <select name="transmission">
+
+                            <option value="Manual"
+                                {% if transmission=="Manual" %}selected{% endif %}>
+                                Manual
+                            </option>
+
+                            <option value="Automatic"
+                                {% if transmission=="Automatic" %}selected{% endif %}>
+                                Automatic
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="button-group">
+
+                        <button class="predict-btn" type="submit">
+                            🚀 Predict Price
+                        </button>
+
+                        <button
+                            type="button"
+                            class="clear-btn"
+                            onclick="window.location='/'">
+
+                            Clear
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+        <!-- RIGHT SIDE -->
+
+        <div class="right-panel">
+
+            <!-- Prediction -->
+
+            {% if prediction_text %}
+
+            <div class="prediction-card">
+
+                <h3>Estimated Selling Price</h3>
+
+                <div class="price">
+
+                    {{ prediction_text }}
+
+                </div>
+
+                <div class="badges">
+
+                    <span class="badge">
+                        🚀 Gradient Boosting
+                    </span>
+
+                    <span class="badge">
+                        📈 Accuracy 96.94%
+                    </span>
+
+                </div>
+
+                <p>
+
+                    This prediction is generated using our trained
+                    Gradient Boosting Regressor model.
+
+                </p>
+
+            </div>
+
+            {% else %}
+
+            <div class="prediction-card waiting">
+
+                <h3>Prediction Result</h3>
+
+                <div class="price">
+
+                    ₹ ---
+
+                </div>
+
+                <p>
+
+                    Fill in the car details and click
+                    <strong>Predict Price</strong>.
+
+                </p>
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- Performance Cards -->
+
+            <div class="metrics">
+
+                <div class="metric-card">
+
+                    <h2>{{ "%.2f"|format(r2*100) }}%</h2>
+
+                    <span>R² Score</span>
+
+                </div>
+
+                <div class="metric-card">
+
+                    <h2>{{ "%.4f"|format(mae) }}</h2>
+
+                    <span>MAE</span>
+
+                </div>
+
+                <div class="metric-card">
+
+                    <h2>{{ "%.4f"|format(rmse) }}</h2>
+
+                    <span>RMSE</span>
+
+                </div>
+
+                <div class="metric-card">
+
+                    <h2>{{ cars }}</h2>
+
+                    <span>Cars</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MODEL DETAILS -->
+
+    <section class="model-section">
+
+        <div class="model-card">
+
+            <h2>Model Information</h2>
+
+            <div class="info-row">
+
+                <span>Algorithm</span>
+
+                <strong>Gradient Boosting Regressor</strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Dataset</span>
+
+                <strong>CarDekho Used Cars</strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Training Samples</span>
+
+                <strong>301</strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Features Used</span>
+
+                <strong>8</strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <span>Framework</span>
+
+                <strong>Scikit-Learn</strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Feature Importance -->
+
+        <div class="model-card">
+
+            <h2>Feature Importance</h2>
+
+            <div class="bar">
+
+                <label>Present Price</label>
+
+                <div class="progress">
+
+                    <div style="width:92%"></div>
+
+                </div>
+
+            </div>
+
+            <div class="bar">
+
+                <label>Car Age</label>
+
+                <div class="progress">
+
+                    <div style="width:68%"></div>
+
+                </div>
+
+            </div>
+
+            <div class="bar">
+
+                <label>KM Driven</label>
+
+                <div class="progress">
+
+                    <div style="width:48%"></div>
+
+                </div>
+
+            </div>
+
+            <div class="bar">
+
+                <label>Fuel Type</label>
+
+                <div class="progress">
+
+                    <div style="width:34%"></div>
+
+                </div>
+
+            </div>
+
+            <div class="bar">
+
+                <label>Seller Type</label>
+
+                <div class="progress">
+
+                    <div style="width:20%"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Why This Prediction -->
+
+        <div class="model-card">
+
+            <h2>Why this Prediction?</h2>
+
+            <ul class="prediction-list">
+
+                <li>💰 Present Price contributes the most.</li>
+
+                <li>📅 Older cars generally have lower resale value.</li>
+
+                <li>🛣 Higher mileage decreases market value.</li>
+
+                <li>⚙ Automatic and dealer-listed cars may command higher prices.</li>
+
+                <li>🤖 Prediction generated using Gradient Boosting Machine Learning.</li>
+
+            </ul>
+
+        </div>
+      <!-- Actual vs Predicted Graph -->
+
+        <div class="model-card">
+
+            <h2>📊 Actual vs Predicted</h2>
+
+            <img
+                src="{{ url_for('static', filename='actual_vs_predicted.png') }}"
+                alt="Actual vs Predicted Graph"
+                class="graph-image">
+            
+                <p class="graph-description">
+                Points closer to the red diagonal indicate more accurate predictions.
+                </p>
+
+        </div>
+        <div class="model-card">
+
+        <h2>📉 Residual Plot</h2>
+
+        <img
+            src="{{ url_for('static', filename='residual_plot.png') }}"
+            alt="Residual Plot"
+            class="graph-image">
+            <p class="graph-description">
+                Residuals are randomly distributed around zero, indicating a well-fitted regression model.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>Bhuvanesh Gupta</h3>
+
+        <p>
+
+            AI • Machine Learning • Flask • Python • Scikit-Learn
+
+        </p>
+
+        <p>
+
+            Car Price Prediction using Gradient Boosting Regressor
+
+        </p>
+
+    </footer>
+
+</div>
+
+</body>
+
+</html>
