@@ -221,25 +221,35 @@ The application also displays the **Top-3 predictions** along with their confide
 
 Add your screenshots here.
 
-### 🏠 Home Page
+## 🏠 Home Page
 
-*(Insert Home Page Screenshot)*
+The landing page of the AI Keyboard Assistant where users can enter text and receive intelligent next-word predictions.
 
-### 🔮 Prediction Example
+![Home Page](screenshots/home.png)
 
-*(Insert Prediction Screenshot)*
+## 🔮 Next Word Prediction
 
-### ✍️ Autocorrect Example
+The model predicts the most probable next word based on the user’s input sequence.
 
-*(Insert Autocorrect Screenshot)*
+![Prediction Example](screenshots/prediction.png)
 
-### 📈 Training Accuracy
+## ✍️ Autocorrect Feature
 
-*(Insert Accuracy Graph)*
+The application automatically suggests corrected words for misspelled input, improving typing accuracy.
 
-### 📉 Training Loss
+![Autocorrect Example](screenshots/autocorrect.png)
 
-*(Insert Loss Graph)*
+## 📈 Training Accuracy
+
+Training accuracy over multiple epochs, demonstrating the model's learning progress.
+
+![Training Accuracy](screenshots/accuracy.png)
+
+## 📉 Training Loss
+
+Training loss decreases over time, indicating effective optimization during model training.
+
+![Training Loss](screenshots/loss.png)
 
 ---
 
