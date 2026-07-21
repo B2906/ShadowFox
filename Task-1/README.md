@@ -219,8 +219,6 @@ The application also displays the **Top-3 predictions** along with their confide
 
 ## 📷 Screenshots
 
-Add your screenshots here.
-
 ## 🏠 Home Page
 
 The landing page of the AI Keyboard Assistant where users can enter text and receive intelligent next-word predictions.
