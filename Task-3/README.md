@@ -1,74 +1,139 @@
-\# GPT-2 Language Model Analysis
+# 🤖 GPT-2 Language Model Analysis
 
+## 📌 Project Overview
 
+This project demonstrates the implementation and analysis of the **GPT-2 Language Model** using the **Hugging Face Transformers** library in Python. The objective is to understand the working principles of transformer-based language models and evaluate their text generation capabilities through various experiments.
 
-\## Overview
+The project includes model implementation, tokenization, text generation, parameter tuning, visualization of results, and an analysis of GPT-2's strengths, limitations, and ethical considerations.
 
+---
 
+## 🎯 Objectives
 
-This project implements and analyzes the GPT-2 Language Model using the Hugging Face Transformers library.
+- Understand the architecture and workflow of GPT-2.
+- Implement GPT-2 using the Hugging Face Transformers library.
+- Explore tokenization and text generation.
+- Evaluate GPT-2 on different prompt scenarios.
+- Analyze the impact of decoding parameters.
+- Visualize experimental observations.
+- Discuss ethical considerations and future improvements.
 
+---
 
+## 🚀 Features
 
-\## Features
+- ✅ GPT-2 Model Implementation
+- ✅ Tokenization and Encoding
+- ✅ Text Generation
+- ✅ Prompt Engineering
+- ✅ Context Understanding Analysis
+- ✅ Domain Adaptability Experiments
+- ✅ Temperature Analysis
+- ✅ Top-k Sampling
+- ✅ Top-p Sampling
+- ✅ Comparative Performance Analysis
+- ✅ Data Visualization
+- ✅ Ethical Considerations and Limitations
 
+---
 
+## 🛠️ Technologies Used
 
-\- GPT-2 Implementation
+- Python
+- Jupyter Notebook
+- Hugging Face Transformers
+- PyTorch
+- NumPy
+- Pandas
+- Matplotlib
 
-\- Tokenization
+---
 
-\- Text Generation
+## 📂 Project Structure
 
-\- Parameter Analysis
+```
+Task-3/
+│
+├── GPT2_Language_Model_Analysis.ipynb
+├── README.md
+├── requirements.txt
+└── images/
+    └── gpt2_architecture.png
+```
 
-\- Context Understanding
+---
 
-\- Domain Adaptability
+## 📊 Experiments Performed
 
-\- Temperature Analysis
+The notebook includes the following experiments:
 
-\- Top-k Sampling
+1. Context Understanding
+2. Domain Adaptability
+3. Prompt Length Analysis
+4. Temperature Analysis
+5. Top-k Sampling
+6. Top-p Sampling
+7. Comparative Analysis
+8. Visualization of Results
 
-\- Top-p Sampling
+---
 
-\- Visualization
+## 📈 Results
 
-\- Ethical Considerations
+The experiments demonstrate that GPT-2 is capable of generating coherent and contextually relevant text across different domains. The quality of generated text is significantly influenced by decoding parameters such as **Temperature**, **Top-k**, and **Top-p**, highlighting the importance of parameter tuning for achieving the desired balance between creativity and coherence.
 
+---
 
+## ⚠️ Ethical Considerations
 
-\## Technologies
+This project also discusses:
 
+- Bias in language models
+- Hallucinated or inaccurate outputs
+- Responsible AI usage
+- Privacy considerations
+- Limitations of GPT-2
 
+---
 
-\- Python
+## 📚 References
 
-\- PyTorch
+- OpenAI GPT-2 Research
+- Hugging Face Transformers Documentation
+- Attention Is All You Need (Vaswani et al.)
+- Language Models are Unsupervised Multitask Learners (Radford et al.)
 
-\- Hugging Face Transformers
+---
 
-\- Jupyter Notebook
+## ▶️ How to Run
 
-\- Matplotlib
+1. Clone this repository.
+2. Install the required libraries:
 
+```bash
+pip install -r requirements.txt
+```
 
+3. Open the notebook:
 
-\## Project Structure
+```
+GPT2_Language_Model_Analysis.ipynb
+```
 
+4. Run all cells sequentially in Jupyter Notebook.
 
+---
 
-\- Environment Setup
+## 📌 Internship Information
 
-\- GPT-2 Implementation
+**Internship:** ShadowFox AI/ML Internship
 
-\- Exploration \& Analysis
+**Task:** Task 3 – GPT-2 Language Model Analysis
 
-\- Research Questions
+---
 
-\- Visualization
+## 👨‍💻 Author
 
-\- Ethics
+**Bhuvanesh Gupta**
 
-\- Conclusion
-
+B.Tech Student | AI & Machine Learning Enthusiast
